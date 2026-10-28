@@ -16,10 +16,9 @@
 #include "platform/transaction.h"
 
 /*
- * State of the app between the screens and the platform. Screens read the fields below and call the model_* commands;
- * they never touch files. The model itself only talks to ModelEnv, so the
- * host tests run it on the in-memory storage; app/boot.c sets it up on the
- * console.
+ * State of the app between the screens and the platform. Screens read the fields below and call the
+ * model_* commands; they never touch files. The model itself only talks to ModelEnv, so the host
+ * tests run it on the in-memory storage; app/boot.c sets it up on the console.
  */
 
 typedef enum {

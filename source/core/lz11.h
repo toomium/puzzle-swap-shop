@@ -6,8 +6,8 @@
 
 /*
  * LZ11, the compression the 3DS uses for many files (3dbrew, "LZ11"). The
- * picture blocks of the PNEL files are packed this way (* the block of panel 7 starts with 11 00 01 01, which unpacks to 0x10100
- * bytes, a 512 x 256 ETC1 texture plus 0x100 bytes of CGFX header).
+ * picture blocks of the PNEL files are packed this way: the block of panel 7 starts with 11 00 01
+ * 01, which unpacks to 0x10100 bytes, a 512 x 256 ETC1 texture plus 0x100 bytes of CGFX header.
  */
 
 /* True if the data starts with the LZ11 marker byte 0x11 and a plausible size field. */

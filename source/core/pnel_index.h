@@ -9,8 +9,8 @@
 #include "core/pnel.h"
 
 /*
- * What the PNEL files on the console say about the SpotPass panels (which panels are downloaded, their names and where their
- * pictures lie. Pure logic; app/pnel_load.c fills it from the files.
+ * What the PNEL files on the console say about the SpotPass panels: which panels are downloaded,
+ * their names and where their pictures lie. Pure logic; app/pnel_load.c fills it from the files.
  *
  * Hypothesis: the entry's order number is the
  * panel id. An entry whose piece count differs from panel_catalog is

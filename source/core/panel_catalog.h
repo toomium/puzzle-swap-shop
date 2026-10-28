@@ -24,7 +24,8 @@ const PanelInfo *panel_catalog_get(unsigned id);
 
 /*
  * File name of the picture of a built-in panel (0..6), as it lies in the RomFS of
- * Mii Plaza and, copied from there, in the app's "panels" folder on the SD card. NULL for every other id.
+ * Mii Plaza and, copied from there, in the app's "panels" folder on the SD card. NULL for every
+ * other id.
  */
 const char *panel_catalog_builtin_image(unsigned id);
 

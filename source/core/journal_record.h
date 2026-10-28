@@ -7,11 +7,10 @@
 #include "core/backup_names.h"
 
 /*
- * Content of journal.txt, which exists while game data is being changed. It is written once before the first
- * game write and removed at the end; it is never rewritten in between, so an
- * interruption cannot damage it. Whether the change went through is decided
- * at start-up from the CRCs. The last line is "end=1", so a file that was cut
- * short while writing is recognised as damaged.
+ * Content of journal.txt, which exists while game data is being changed. It is written once before
+ * the first game write and removed at the end; it is never rewritten in between, so an interruption
+ * cannot damage it. Whether the change went through is decided at start-up from the CRCs. The last
+ * line is "end=1", so a file that was cut short while writing is recognised as damaged.
  */
 
 #define JOURNAL_FORMAT   1

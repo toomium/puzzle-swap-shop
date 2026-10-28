@@ -4,8 +4,8 @@
 #include <stdbool.h>
 
 /*
- * The coin display counting from one value to another: one coin every `step` frames, the whole count at most
- * `max_frames` long. Wraps the tween_count_* helpers with a frame counter.
+ * The coin display counting from one value to another: one coin every `step` frames, the whole
+ * count at most `max_frames` long. Wraps the tween_count_* helpers with a frame counter.
  */
 
 typedef struct {

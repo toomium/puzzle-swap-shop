@@ -4,9 +4,9 @@
 #include <stdbool.h>
 
 /*
- * Confetti for a puzzle that was just completed. Every piece falls from the top edge with its own start frame,
- * speed and sway, computed from its index alone, so the effect is the same
- * on every run and needs no state.
+ * Confetti for a puzzle that was just completed. Every piece falls from the top edge with its own
+ * start frame, speed and sway, computed from its index alone, so the effect is the same on every
+ * run and needs no state.
  */
 
 #define CONFETTI_COUNT  40
