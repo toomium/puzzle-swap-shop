@@ -185,7 +185,7 @@ TEST image_is_read_from_the_file_and_decodes(void)
     PASS();
 }
 
-TEST rare_pattern_known_for_40_pieces_only(void)
+TEST rare_pattern_known_for_24_and_40_pieces(void)
 {
     uint64_t mask = 123;
     ASSERT(rare_mask_from_pnel(0, 24, &mask)); /* flag 00: none */
@@ -195,7 +195,10 @@ TEST rare_pattern_known_for_40_pieces_only(void)
     ASSERT(mask & (1ull << 11) && mask & (1ull << 28));
     ASSERT(!(mask & (1ull << 0)));
     mask = 123;
-    ASSERT(!rare_mask_from_pnel(1, 24, &mask)); /* pattern of 24 pieces unknown */
+    ASSERT(rare_mask_from_pnel(1, 24, &mask)); /* the four in the middle */
+    ASSERT_EQ((1ull << 8) | (1ull << 9) | (1ull << 14) | (1ull << 15), mask);
+    mask = 123;
+    ASSERT(!rare_mask_from_pnel(1, 15, &mask)); /* pattern of 15 pieces unknown */
     ASSERT_EQ(0u, mask);
     mask = 123;
     ASSERT(!rare_mask_from_pnel(5, 40, &mask)); /* unknown flag value */
@@ -292,7 +295,7 @@ SUITE(pnel_index_suite)
     RUN_TEST(ignores_entries_that_do_not_fit_the_catalog);
     RUN_TEST(presence_rule);
     RUN_TEST(image_is_read_from_the_file_and_decodes);
-    RUN_TEST(rare_pattern_known_for_40_pieces_only);
+    RUN_TEST(rare_pattern_known_for_24_and_40_pieces);
     RUN_TEST(model_uses_pnel);
     RUN_TEST(model_without_pnel_keeps_old_rules);
     RUN_TEST(builtin_panel_picture_comes_from_the_sd_card);
