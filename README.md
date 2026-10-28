@@ -78,7 +78,7 @@ A GodMode9 script copies the seven pictures from your own Mii Plaza installation
 
 ### Rare (pink) pieces
 
-Mii Plaza has pieces you can't get with Play Coins in the game, only through StreetPass. This app can still buy them for **10 Play Coins** each and marks them with a pink dot. This works for puzzles with 40 pieces (eight pieces per puzzle); puzzles with 15 pieces have none. For puzzles with 24 pieces the app doesn't mark any rare pieces yet, so they cost the normal price.
+Mii Plaza has pieces you can't get with Play Coins in the game, only through StreetPass. This app can still buy them for **10 Play Coins** each and marks them with a pink dot. This works for puzzles with 40 pieces (eight pieces per puzzle) and puzzles with 24 pieces (the four in the middle); puzzles with 15 pieces have none.
 
 ### Prices
 
@@ -220,7 +220,7 @@ Ein GodMode9-Skript kopiert die sieben Bilder aus deiner eigenen Mii-Plaza-Insta
 
 ### Seltene (rosa) Teile
 
-In Mii Plaza gibt es Teile, die du im Spiel nicht mit Spielmünzen bekommst, sondern nur per StreetPass. Diese App kann sie trotzdem für **10 Spielmünzen** pro Teil kaufen. Die App kennzeichnet sie mit einem rosa Punkt. Das funktioniert bei Puzzles mit 40 Teilen (dort sind es acht Teile pro Puzzle); Puzzles mit 15 Teilen haben keine. Bei Puzzles mit 24 Teilen markiert die App noch keine seltenen Teile, sie kosten wie normale.
+In Mii Plaza gibt es Teile, die du im Spiel nicht mit Spielmünzen bekommst, sondern nur per StreetPass. Diese App kann sie trotzdem für **10 Spielmünzen** pro Teil kaufen. Die App kennzeichnet sie mit einem rosa Punkt. Das funktioniert bei Puzzles mit 40 Teilen (dort sind es acht Teile pro Puzzle) und mit 24 Teilen (dort die vier in der Mitte); Puzzles mit 15 Teilen haben keine.
 
 ### Preise
 
