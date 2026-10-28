@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17">
+  <!-- Play coin, 16 px, 1 px shadow below. Original artwork. -->
+  <defs><radialGradient id="g" cx="0.35" cy="0.3" r="0.75"><stop offset="0" stop-color="#FFE48A"/><stop offset="0.24" stop-color="#FFE48A"/><stop offset="0.6" stop-color="#F7BE16"/><stop offset="1" stop-color="#E8A800"/></radialGradient></defs>
+  <circle cx="8.0" cy="9.0" r="8.0" fill="#000000" fill-opacity="0.18"/>
+  <circle cx="8.0" cy="8.0" r="7.25" fill="url(#g)" stroke="#C88A00" stroke-width="1.5"/>
+  <circle cx="8.0" cy="8.0" r="4.0" fill="none" stroke="#A06900" stroke-opacity="0.55" stroke-width="1"/>
+</svg>

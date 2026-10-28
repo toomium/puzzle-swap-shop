@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="20" viewBox="0 0 48 20">
+  <!-- Small cloud. -->
+  <g fill="#FFFFFF">
+    <rect x="1" y="10" width="46" height="9" rx="4.5"/>
+    <circle cx="16" cy="10" r="7"/>
+    <circle cx="27" cy="8.5" r="8"/>
+    <circle cx="36" cy="12" r="5.5"/>
+  </g>
+</svg>

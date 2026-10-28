@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="72" height="28" viewBox="0 0 72 28">
+  <!-- Cloud for the top screen sky. Drawn with 85 % opacity. -->
+  <g fill="#FFFFFF">
+    <rect x="2" y="14" width="68" height="13" rx="6.5"/>
+    <circle cx="22" cy="15" r="10"/>
+    <circle cx="38" cy="12" r="11.5"/>
+    <circle cx="53" cy="16" r="8"/>
+  </g>
+</svg>

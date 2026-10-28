@@ -1,0 +1,40 @@
+# Host build for the platform-independent core (source/core), the portable
+# platform modules and their tests.
+#
+#   make -f Makefile.host test     build and run all tests
+#   make -f Makefile.host clean
+
+CC       ?= cc
+CFLAGS   := -std=c11 -Wall -Wextra -Werror -pedantic -g -O1 \
+            -fsanitize=address,undefined -fno-omit-frame-pointer \
+            -Isource -Itests
+LDFLAGS  := -fsanitize=address,undefined
+
+BIN      := tests/bin
+CORE_SRC := $(wildcard source/core/*.c)
+# Portable platform and app modules that talk to storage only through the Storage table.
+PLAT_SRC := source/platform/backup.c source/platform/journal.c source/platform/transaction.c \
+            source/platform/fault_storage.c source/app/model.c source/app/route.c source/app/pnel_load.c
+TEST_SRC := $(wildcard tests/*.c)
+OBJS     := $(patsubst %.c,$(BIN)/%.o,$(CORE_SRC) $(PLAT_SRC) $(TEST_SRC))
+RUNNER   := $(BIN)/run_tests
+
+.PHONY: test clean fixtures
+
+test: $(RUNNER) fixtures
+	$(RUNNER)
+
+fixtures:
+	@python3 tools/make_fixture.py --out tests/fixtures --defaults
+
+$(RUNNER): $(OBJS)
+	$(CC) $(LDFLAGS) -o $@ $^
+
+$(BIN)/%.o: %.c
+	@mkdir -p $(dir $@)
+	$(CC) $(CFLAGS) -MMD -MP -c -o $@ $<
+
+clean:
+	rm -rf $(BIN)
+
+-include $(OBJS:.o=.d)

@@ -1,0 +1,113 @@
+name: Release
+
+# A tag v* builds .3dsx and .cia and creates a *draft* GitHub release with both;
+# publishing the draft stays a manual step.
+# Pull requests and manual runs are dry runs: same
+# build, files only as workflow artifacts, no release.
+
+on:
+  push:
+    tags: ['v*']
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Trockenlauf: nur bauen, kein Release (ein Release geht nur von einem Tag v*)'
+        type: boolean
+        default: true
+
+permissions:
+  contents: read
+
+env:
+  MAKEROM_URL: https://github.com/3DSGuy/Project_CTR/releases/download/makerom-v0.18.4/makerom-v0.18.4-ubuntu_x86_64.zip
+  MAKEROM_SHA256: dd596854718c195c6e3229286be485b122921715555af8ae5cf8e9a465d9f970
+  BANNERTOOL_URL: https://github.com/diasurgical/bannertool/releases/download/1.2.0/bannertool.zip
+  BANNERTOOL_SHA256: 69768596f836acb3e3aeaa66e47c6ba560dde813c6dfcd33c8afc25fe29b7524
+
+jobs:
+  host-tests:
+    name: Host-Tests (core)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Tests
+        run: make -f Makefile.host test
+
+  build:
+    name: 3DSX und CIA bauen
+    needs: host-tests
+    runs-on: ubuntu-latest
+    container: devkitpro/devkitarm:latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Version prüfen
+        run: |
+          v() { sed -n "s/^#define PSS_VERSION_$1  *//p" source/core/version.h; }
+          version="$(v MAJOR).$(v MINOR).$(v PATCH)"
+          echo "Version in source/core/version.h: $version"
+          if [ "${GITHUB_REF_TYPE}" = "tag" ] && [ "${GITHUB_REF_NAME}" != "v$version" ]; then
+            echo "::error::Tag ${GITHUB_REF_NAME} passt nicht zu version.h ($version)"
+            exit 1
+          fi
+
+      - name: makerom und bannertool installieren (feste Versionen)
+        run: |
+          command -v unzip >/dev/null || { apt-get update && apt-get install -y --no-install-recommends unzip; }
+          mkdir -p /tmp/tools && cd /tmp/tools
+          curl -fsSL -o makerom.zip "$MAKEROM_URL"
+          curl -fsSL -o bannertool.zip "$BANNERTOOL_URL"
+          echo "$MAKEROM_SHA256  makerom.zip" | sha256sum -c -
+          echo "$BANNERTOOL_SHA256  bannertool.zip" | sha256sum -c -
+          unzip -q makerom.zip -d makerom
+          unzip -q bannertool.zip -d bannertool
+          install -m 755 makerom/makerom /usr/local/bin/makerom
+          install -m 755 bannertool/linux-x86_64/bannertool /usr/local/bin/bannertool
+
+      - name: Build
+        run: |
+          make WERROR=1
+          make cia
+
+      - name: Prüfsummen
+        run: |
+          sha256sum puzzle-swap-shop.3dsx puzzle-swap-shop.cia | tee SHA256SUMS
+          {
+            echo '### Dateien'
+            echo '```'
+            ls -l puzzle-swap-shop.3dsx puzzle-swap-shop.cia
+            cat SHA256SUMS
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: release-files
+          path: |
+            puzzle-swap-shop.3dsx
+            puzzle-swap-shop.cia
+            SHA256SUMS
+          if-no-files-found: error
+
+  release:
+    name: Release-Entwurf anlegen
+    needs: build
+    if: github.ref_type == 'tag' && (github.event_name == 'push' || !inputs.dry_run)
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: release-files
+      - name: Entwurf anlegen
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" \
+            --repo "$GITHUB_REPOSITORY" \
+            --draft \
+            --title "Puzzle Swap Shop $GITHUB_REF_NAME" \
+            --generate-notes \
+            puzzle-swap-shop.3dsx puzzle-swap-shop.cia SHA256SUMS

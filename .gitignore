@@ -1,0 +1,26 @@
+# devkitPro build output
+build/
+build-diag/
+*.3dsx
+*.smdh
+*.elf
+*.cia
+*.t3x
+*.map
+*.lst
+romfs/gfx/
+
+# host tests
+tests/bin/
+tests/fixtures/*.dat
+tests/private/
+__pycache__/
+
+# never commit real save data
+*.sav
+meet.dat
+gamecoin.dat
+dump/
+
+
+.DS_Store

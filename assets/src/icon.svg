@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <!-- App icon: the logo from S1 (green puzzle piece with a play coin) under the kiosk awning. Original artwork. -->
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#E3F6FD"/>
+      <stop offset="0.62" stop-color="#F4FBF2"/>
+      <stop offset="1" stop-color="#CDEBB6"/>
+    </linearGradient>
+  </defs>
+  <rect width="48" height="48" fill="url(#bg)"/>
+  <!-- awning: rod, cloth with 6 px stripes, scallops -->
+  <rect x="0" y="2" width="48" height="6" fill="#FFFFFF"/>
+  <g><rect x="0" y="2" width="6" height="6" fill="#5BB83C"/><rect x="12" y="2" width="6" height="6" fill="#5BB83C"/><rect x="24" y="2" width="6" height="6" fill="#5BB83C"/><rect x="36" y="2" width="6" height="6" fill="#5BB83C"/></g>
+  <g fill="#3C8A25" opacity=".2"><path d="M0 8 h6 a3 2.5 0 0 1 -6 0z"/><path d="M6 8 h6 a3 2.5 0 0 1 -6 0z"/><path d="M12 8 h6 a3 2.5 0 0 1 -6 0z"/><path d="M18 8 h6 a3 2.5 0 0 1 -6 0z"/><path d="M24 8 h6 a3 2.5 0 0 1 -6 0z"/><path d="M30 8 h6 a3 2.5 0 0 1 -6 0z"/><path d="M36 8 h6 a3 2.5 0 0 1 -6 0z"/><path d="M42 8 h6 a3 2.5 0 0 1 -6 0z"/></g>
+  <g><path d="M0 7.5 h6 a3 2.5 0 0 1 -6 0z" fill="#5BB83C"/><path d="M6 7.5 h6 a3 2.5 0 0 1 -6 0z" fill="#FFFFFF"/><path d="M12 7.5 h6 a3 2.5 0 0 1 -6 0z" fill="#5BB83C"/><path d="M18 7.5 h6 a3 2.5 0 0 1 -6 0z" fill="#FFFFFF"/><path d="M24 7.5 h6 a3 2.5 0 0 1 -6 0z" fill="#5BB83C"/><path d="M30 7.5 h6 a3 2.5 0 0 1 -6 0z" fill="#FFFFFF"/><path d="M36 7.5 h6 a3 2.5 0 0 1 -6 0z" fill="#5BB83C"/><path d="M42 7.5 h6 a3 2.5 0 0 1 -6 0z" fill="#FFFFFF"/></g>
+  <rect x="0" y="0" width="48" height="2" fill="#2E6E1C"/>
+  <!-- logo, scaled from the 54 px box in S1 -->
+  <g transform="translate(5 11) scale(0.66)">
+    <g transform="rotate(-8 24 26)">
+      <path d="M5 15 h12 a6.5 6.5 0 1 1 11 0 h12 v11 a6.5 6.5 0 1 1 0 11 v11 h-35z" fill="#5BB83C" stroke="#3C8A25" stroke-width="2.6" stroke-linejoin="round"/>
+      <path d="M7.5 17.5 h10.5 a6.5 6.5 0 0 1 -0.5 -3 M29 17.5 h8.5 v5" fill="none" stroke="#9BE07A" stroke-width="2.4" stroke-linecap="round"/>
+    </g>
+    <circle cx="38" cy="38" r="12" fill="#F7BE16" stroke="#C88A00" stroke-width="2.6"/>
+    <circle cx="38" cy="38" r="7" fill="none" stroke="#C88A00" stroke-opacity=".55" stroke-width="1.6"/>
+    <circle cx="34.5" cy="33.5" r="2.6" fill="#FFE48A"/>
+  </g>
+</svg>

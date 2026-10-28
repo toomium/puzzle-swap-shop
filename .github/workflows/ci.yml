@@ -1,0 +1,54 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  host-tests:
+    name: Host-Tests (core)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Tests
+        run: make -f Makefile.host test
+
+  format:
+    name: Formatierung
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: clang-format
+        run: |
+          files=$(git ls-files 'source/*.c' 'source/*.h' 'tests/*.c' 'tests/fixture.h' 'tests/fake_storage.h')
+          clang-format --dry-run --Werror $files
+
+  build-3ds:
+    name: 3DS-Build
+    runs-on: ubuntu-latest
+    container: devkitpro/devkitarm:latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build
+        run: make WERROR=1
+      - name: Build diagnosis
+        run: make diag WERROR=1
+      - uses: actions/upload-artifact@v4
+        with:
+          name: puzzle-swap-shop
+          path: |
+            puzzle-swap-shop.3dsx
+            puzzle-swap-shop.smdh
+      - uses: actions/upload-artifact@v4
+        with:
+          name: puzzle-swap-shop-diag
+          path: puzzle-swap-shop-diag.3dsx
+
+  theme-colors:
+    name: Farbwerte nur in theme.c
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: tools/check_colors.sh
+        run: sh tools/check_colors.sh

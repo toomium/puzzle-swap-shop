@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="54" height="54" viewBox="0 0 54 54">
+  <!-- Logo for S1 and error screens: green puzzle piece with a play coin. Original artwork. -->
+  <g transform="rotate(-8 24 26)">
+    <path d="M5 15 h12 a6.5 6.5 0 1 1 11 0 h12 v11 a6.5 6.5 0 1 1 0 11 v11 h-35z" fill="#5BB83C" stroke="#3C8A25" stroke-width="2" stroke-linejoin="round"/>
+    <path d="M7 17 h11 a6.5 6.5 0 0 1 -0.5 -3 M29 17 h9 v5" fill="none" stroke="#9BE07A" stroke-width="2" stroke-linecap="round"/>
+  </g>
+  <circle cx="38" cy="38" r="12" fill="#F7BE16" stroke="#C88A00" stroke-width="2"/>
+  <circle cx="38" cy="38" r="7.5" fill="none" stroke="#C88A00" stroke-opacity="0.55" stroke-width="1.2"/>
+  <circle cx="34.5" cy="33.5" r="2.4" fill="#FFE48A"/>
+</svg>

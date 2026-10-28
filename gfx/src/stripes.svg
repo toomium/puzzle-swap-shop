@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <!-- Bottom screen background, seamless 24 px tile of diagonal stripes. -->
+  <rect width="24" height="24" fill="#E8F4DF"/>
+  <g fill="#F0F8E9">
+    <polygon points="-24,0 -12,0 -36,24 -48,24"/>
+    <polygon points="0,0 12,0 -12,24 -24,24"/>
+    <polygon points="24,0 36,0 12,24 0,24"/>
+    <polygon points="48,0 60,0 36,24 24,24"/>
+  </g>
+</svg>

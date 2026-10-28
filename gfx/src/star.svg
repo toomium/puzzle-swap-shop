@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19">
+  <!-- Completed puzzle: gold badge with a white star, 1 px shadow. -->
+  <defs><radialGradient id="g" cx="0.35" cy="0.3" r="0.75"><stop offset="0" stop-color="#FFE48A"/><stop offset="1" stop-color="#F7BE16"/></radialGradient></defs>
+  <circle cx="9" cy="10" r="9" fill="#000000" fill-opacity="0.2"/>
+  <circle cx="9" cy="9" r="8.25" fill="url(#g)" stroke="#C88A00" stroke-width="1.5"/>
+  <polygon points="9,4 10.1,7.5 13.8,7.5 10.8,9.7 11.9,13.1 9,11 6.1,13.1 7.2,9.7 4.2,7.5 7.9,7.5" fill="#FFFFFF"/>
+</svg>

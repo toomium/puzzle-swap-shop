@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="32" viewBox="0 0 24 32">
+  <!-- Primary button, 9-slice. Box 24x30, 2 px hard shadow below. -->
+  <defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7CD154"/><stop offset="1" stop-color="#4FAF2E"/></linearGradient></defs>
+  <rect x="0" y="2" width="24" height="30" rx="8" fill="#3C8A25"/>
+  <rect x="0.5" y="0.5" width="23" height="29" rx="7.5" fill="url(#g)" stroke="#3C8A25"/>
+</svg>

@@ -1,0 +1,85 @@
+#include "greatest.h"
+
+/* Every test file defines one suite; list it here. */
+SUITE_EXTERN(version_suite);
+SUITE_EXTERN(panel_catalog_suite);
+SUITE_EXTERN(panel_bits_suite);
+SUITE_EXTERN(meet_save_suite);
+SUITE_EXTERN(gamecoin_suite);
+SUITE_EXTERN(shop_suite);
+SUITE_EXTERN(crc32_suite);
+SUITE_EXTERN(pnel_suite);
+SUITE_EXTERN(strings_suite);
+SUITE_EXTERN(private_save_suite);
+SUITE_EXTERN(mii_plaza_suite);
+SUITE_EXTERN(kvtext_suite);
+SUITE_EXTERN(backup_names_suite);
+SUITE_EXTERN(manifest_journal_suite);
+SUITE_EXTERN(backup_suite);
+SUITE_EXTERN(transaction_suite);
+SUITE_EXTERN(fault_storage_suite);
+SUITE_EXTERN(settings_suite);
+SUITE_EXTERN(model_suite);
+SUITE_EXTERN(geom_suite);
+SUITE_EXTERN(text_fit_suite);
+SUITE_EXTERN(easing_suite);
+SUITE_EXTERN(input_suite);
+SUITE_EXTERN(sfx_suite);
+SUITE_EXTERN(scene_stack_suite);
+SUITE_EXTERN(stereo_suite);
+SUITE_EXTERN(widgets_suite);
+SUITE_EXTERN(lang_map_suite);
+SUITE_EXTERN(onboarding_suite);
+SUITE_EXTERN(picker_suite);
+SUITE_EXTERN(purchase_suite);
+SUITE_EXTERN(backup_list_suite);
+SUITE_EXTERN(settings_menu_suite);
+SUITE_EXTERN(pica_tex_suite);
+SUITE_EXTERN(cgfx_suite);
+SUITE_EXTERN(pnel_index_suite);
+SUITE_EXTERN(lz11_suite);
+
+GREATEST_MAIN_DEFS();
+
+int main(int argc, char **argv)
+{
+    GREATEST_MAIN_BEGIN();
+    RUN_SUITE(version_suite);
+    RUN_SUITE(panel_catalog_suite);
+    RUN_SUITE(panel_bits_suite);
+    RUN_SUITE(meet_save_suite);
+    RUN_SUITE(gamecoin_suite);
+    RUN_SUITE(shop_suite);
+    RUN_SUITE(crc32_suite);
+    RUN_SUITE(pnel_suite);
+    RUN_SUITE(strings_suite);
+    RUN_SUITE(private_save_suite);
+    RUN_SUITE(mii_plaza_suite);
+    RUN_SUITE(kvtext_suite);
+    RUN_SUITE(backup_names_suite);
+    RUN_SUITE(manifest_journal_suite);
+    RUN_SUITE(backup_suite);
+    RUN_SUITE(transaction_suite);
+    RUN_SUITE(fault_storage_suite);
+    RUN_SUITE(settings_suite);
+    RUN_SUITE(model_suite);
+    RUN_SUITE(geom_suite);
+    RUN_SUITE(text_fit_suite);
+    RUN_SUITE(easing_suite);
+    RUN_SUITE(input_suite);
+    RUN_SUITE(sfx_suite);
+    RUN_SUITE(scene_stack_suite);
+    RUN_SUITE(stereo_suite);
+    RUN_SUITE(widgets_suite);
+    RUN_SUITE(lang_map_suite);
+    RUN_SUITE(onboarding_suite);
+    RUN_SUITE(picker_suite);
+    RUN_SUITE(purchase_suite);
+    RUN_SUITE(backup_list_suite);
+    RUN_SUITE(settings_menu_suite);
+    RUN_SUITE(pica_tex_suite);
+    RUN_SUITE(cgfx_suite);
+    RUN_SUITE(pnel_index_suite);
+    RUN_SUITE(lz11_suite);
+    GREATEST_MAIN_END();
+}

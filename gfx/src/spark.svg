@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+  <!-- Sparkle, 14 px star with a warm glow. -->
+  <defs><filter id="glow" x="-1" y="-1" width="3" height="3"><feGaussianBlur stdDeviation="1.2"/></filter></defs>
+  <polygon points="10,3 11.68,8.32 17,10 11.68,11.68 10,17 8.32,11.68 3,10 8.32,8.32" fill="#FFDC5A" fill-opacity="0.9" filter="url(#glow)"/>
+  <polygon points="10,3 11.68,8.32 17,10 11.68,11.68 10,17 8.32,11.68 3,10 8.32,8.32" fill="#FFFFFF"/>
+</svg>

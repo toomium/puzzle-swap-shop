@@ -1,0 +1,35 @@
+# Puzzle Swap Shop: copies the pictures of the 7 built-in puzzles of StreetPass Mii Plaza
+# from its RomFS to the SD card, where the app reads them.
+#
+# Use: copy this file to sdmc:/gm9/scripts/, start GodMode9, press the HOME button there to open
+# the menu, choose "Scripts..." and then extract_panels_jpn. Only the SD card is written.
+#
+# NOT TESTED on a console: this is the JPN variant of extract_panels.gm9, which was tested on a
+# European console only. The title id 00020800 comes from the region table in the app; the content
+# id of the big .app (APP below) is copied from the EUR console and may be different here.
+set TID 00020800
+set OUT 0:/3ds/PuzzleSwapShop/panels
+
+ask "Copy the 7 built-in puzzle pictures\nof Mii Plaza to the SD card?\n\nTarget: $[OUT]"
+
+mkdir 0:/3ds
+mkdir 0:/3ds/PuzzleSwapShop
+mkdir $[OUT]
+
+# Two .app files lie there; the one with the RomFS is the big one (about 16 MB), 0000001d.app
+# on an EUR console (0000001f.app is the small one). Content ids can differ between regions
+# and versions: if the copies below fail, look up the big file in GodMode9 and change APP.
+set APP 1:/title/00040010/$[TID]/content/0000001d.app
+echo "Mounting $[APP]"
+imgmount $[APP]
+
+cp -w -n G:/romfs/graphics/tex/item_panel_Samus.lz77 $[OUT]/item_panel_Samus.lz77
+cp -w -n G:/romfs/graphics/tex/item_panel_MarioKoopa.lz77 $[OUT]/item_panel_MarioKoopa.lz77
+cp -w -n G:/romfs/graphics/tex/item_panel_Galaxy2.lz77 $[OUT]/item_panel_Galaxy2.lz77
+cp -w -n G:/romfs/graphics/tex/item_panel_Link.lz77 $[OUT]/item_panel_Link.lz77
+cp -w -n G:/romfs/graphics/tex/item_panel_Kirby.lz77 $[OUT]/item_panel_Kirby.lz77
+cp -w -n G:/romfs/graphics/tex/item_panel_Pikmin.lz77 $[OUT]/item_panel_Pikmin.lz77
+cp -w -n G:/romfs/graphics/tex/item_panel_NewMario.lz77 $[OUT]/item_panel_NewMario.lz77
+imgumount
+
+echo "Done. Start Puzzle Swap Shop."
